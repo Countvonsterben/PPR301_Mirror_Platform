@@ -19,7 +19,7 @@ public class OverworldMovement : MonoBehaviour
     public UnderworldMovement underworldPlayer;
 
     //jump
-    private float jumpCooldown = 2f;
+    private float jumpCooldown = 0.5f;
     private float lastJumpTime = -Mathf.Infinity;
 
 
