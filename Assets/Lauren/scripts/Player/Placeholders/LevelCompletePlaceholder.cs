@@ -12,13 +12,12 @@ public class LevelCompletePlaceholder : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Level done");
-            Time.timeScale = 0f;
-            // Invoke("CompleteLevel", 2f); go next level
+            Invoke("CompleteLevel", 1f);
         }
     }
 
     private void CompleteLevel()
     {
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

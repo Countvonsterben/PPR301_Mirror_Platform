@@ -42,11 +42,11 @@ public class OverworldMovement : MonoBehaviour
             lastJumpTime = Time.time;
 
 
-            //TRIGGER REFLECT JUMP
-            if (underworldPlayer != null)
+            //TRIGGER REFLECT JUMP -- TESTING REMOVAL 3/07
+            /* if (underworldPlayer != null)
             {
                 underworldPlayer.Jump();
-            }
+            } */
         }
 
         //UpdateAnimationUpdate();
