@@ -6,11 +6,17 @@ using Cinemachine;
 
 public class WorldSwitch : MonoBehaviour
 {
-    public CinemachineVirtualCamera virtualCam;
-    public Transform PlayerOverworld;
-    public Transform PlayerUnderworld;
+    public CinemachineVirtualCamera overworldCam;
+    public CinemachineVirtualCamera underworldCam;
 
     private bool inUnderworld = false;
+
+    void Start()
+    {
+        // Ensure correct starting state
+        overworldCam.Priority = 10;
+        underworldCam.Priority = 0;
+    }
 
     void Update()
     {
@@ -20,18 +26,14 @@ public class WorldSwitch : MonoBehaviour
 
             if (inUnderworld)
             {
-                virtualCam.Follow = PlayerUnderworld;
-                virtualCam.LookAt = PlayerUnderworld;
-                virtualCam.transform.rotation = Quaternion.Euler(0, 0, 180);
+                overworldCam.Priority = 0;
+                underworldCam.Priority = 10;
             }
-
             else
             {
-                virtualCam.Follow = PlayerOverworld;
-                virtualCam.LookAt = PlayerOverworld;
-                virtualCam.transform.rotation = Quaternion.Euler(0, 0, 0);
+                overworldCam.Priority = 10;
+                underworldCam.Priority = 0;
             }
         }
     }
 }
-

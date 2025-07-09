@@ -5,11 +5,8 @@ using UnityEngine;
 public class OverworldMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Animator anim;
 
-    /// <summary> SPRITE STUFF FOR LATER
-    /// private SpriteRenderer sprite;
-    /// private Animator anim;
-    /// </summary>
 
     //private float dirX = 0f;
     [SerializeField] private float moveSpeed = 5f;
@@ -23,11 +20,13 @@ public class OverworldMovement : MonoBehaviour
     private float lastJumpTime = -Mathf.Infinity;
 
 
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         //sprite = GetComponent<SpriteRenderer>();
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -35,6 +34,16 @@ public class OverworldMovement : MonoBehaviour
     {
         float dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+
+        // anim test
+        if (dirX != 0)
+        {
+            anim.SetBool("isRunning", true);
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
 
         if (Input.GetKeyDown(KeyCode.E) && Time.time - lastJumpTime >= jumpCooldown) //E but this wil be spacebar later
         {

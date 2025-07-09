@@ -10,7 +10,10 @@ public class ButtonTrigPlaceholder : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            doorActivate.SetActive(true);
+            if (doorActivate != null)
+                doorActivate.SetActive(true);
+
+            Destroy(gameObject);
         }
     }
 }
