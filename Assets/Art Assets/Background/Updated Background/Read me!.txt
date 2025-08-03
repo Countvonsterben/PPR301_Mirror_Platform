@@ -1,0 +1,4 @@
+All files numbered Layer1 and Layer 3 are the background for the parallax scenes
+All files numbered layered 2 and 4 are the foreground for the parallax scenes
+
+BG3 is a bit special, Bg3_layer1 needs bg1_layer1 as the background, and bg3_layer2 needs bg1_layer3 for the background.

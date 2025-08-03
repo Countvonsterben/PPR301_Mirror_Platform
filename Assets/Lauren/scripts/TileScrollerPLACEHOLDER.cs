@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class TileScrollerPLACEHOLDER : MonoBehaviour
 {
-    [Header("Assign both players for this background")]
+    [Header("Playerrs")]
     public Transform overworldPlayer;
     public Transform underworldPlayer;
 
-    [Header("Assign the ORIGINAL background object in the scene")]
+    [Header("Original BG")]
     public GameObject originalBackgroundObject;
 
-    [Header("Settings")]
+    [Header("settings")]
     public float backgroundWidth = 8.5f;
     public float spawnAheadThreshold = 12f;
     public float cleanupBehindThreshold = 16f;
@@ -21,14 +21,6 @@ public class TileScrollerPLACEHOLDER : MonoBehaviour
 
     void Start()
     {
-        if (originalBackgroundObject == null || overworldPlayer == null || underworldPlayer == null)
-        {
-            Debug.LogError("Assign all references in TileScrollerPLACEHOLDER!");
-            enabled = false;
-            return;
-        }
-
-        // Spawn initial pieces: 3 pieces lined up starting at this object's position
         Vector3 startPos = transform.position;
         for (int i = 0; i < 3; i++)
         {

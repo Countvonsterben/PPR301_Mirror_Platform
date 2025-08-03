@@ -22,7 +22,7 @@ public class TESTPARASCRIPT : MonoBehaviour
     {
         if (worldPlayer == null)
         {
-            Debug.LogWarning("ParallaxScroll: Player not assigned!");
+            Debug.LogWarning("Para scroll = player not assigned  CHECK");
             return;
         }
 
